@@ -1,4 +1,5 @@
 import argparse
+import time  # Import the time module
 
 # from langchain.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
@@ -22,12 +23,20 @@ Answer the question based on the above context: {question}
 
 
 def main():
+    # Start the timer
+    start_time = time.time()
+
     # Create CLI.
     parser = argparse.ArgumentParser()
     parser.add_argument("query_text", type=str, help="The query text.")
     args = parser.parse_args()
     query_text = args.query_text
     query_rag(query_text)
+
+    # End the timer and display runtime
+    end_time = time.time()
+    runtime = end_time - start_time
+    print(f"Runtime: {runtime:.2f} seconds")
 
 
 def query_rag(query_text: str):

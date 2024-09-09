@@ -9,19 +9,23 @@ Actual Response: {actual_response}
 """
 
 
-def test_monopoly_rules():
+# def test_monopoly_rules():
+#     assert query_and_validate(
+#         question="How much total money does a player start with in Monopoly? (Answer with the number only)",
+#         expected_response="$1500",
+#     )
+#
+#
+# def test_ticket_to_ride_rules():
+#     assert query_and_validate(
+#         question="How many points does the longest continuous train get in Ticket to Ride? (Answer with the number only)",
+#         expected_response="10 points",
+#     )
+def test_turbopump_question():
     assert query_and_validate(
-        question="How much total money does a player start with in Monopoly? (Answer with the number only)",
-        expected_response="$1500",
+        question="What is the axial inlet portion of the turbopump rotor whose function is to raise the inlet head by an amount sufficient to preclude cavitation?",
+        expected_response="inducer",
     )
-
-
-def test_ticket_to_ride_rules():
-    assert query_and_validate(
-        question="How many points does the longest continuous train get in Ticket to Ride? (Answer with the number only)",
-        expected_response="10 points",
-    )
-
 
 def query_and_validate(question: str, expected_response: str):
     response_text = query_rag(question)
