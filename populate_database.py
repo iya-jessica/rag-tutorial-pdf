@@ -5,10 +5,10 @@ from langchain_community.document_loaders.pdf import PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from get_embedding_function import get_embedding_function
-#from langchain.vectorstores.chroma import Chroma
 from langchain_community.vectorstores import Chroma
 from langchain_chroma import Chroma
 import warnings
+
 
 
 # Suppress warnings using a regex pattern
